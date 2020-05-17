@@ -10,8 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    lazy var game = Concentration(numberOfPairsOfCards:
-        (cardButtons.count + 1 ) / 2 )
+    //ゲーム初期化
+    lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+    // カードペアの数
+    var numberOfPairsOfCards: Int {
+        get {
+            return (cardButtons.count + 1 ) / 2
+        }
+    }
     
     var flipCount = 0{
         didSet{
